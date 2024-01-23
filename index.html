@@ -7,12 +7,13 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f0f8ff; /* Light Blue Background */
-      font-family: Arial, sans-serif;
+      background-color: #f8f9fa; /* Light Gray Background */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #495057;
     }
 
     nav {
-      background-color: #333;
+      background-color: #343a40;
       color: white;
       padding: 10px;
       display: flex;
@@ -22,7 +23,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      height: 50px;
+      height: 60px;
     }
 
     nav ul {
@@ -41,7 +42,7 @@
       color: white;
       font-weight: bold;
       transition: color 0.3s; /* Hover effect */
-      font-size: 20px;
+      font-size: 18px;
     }
 
     nav a:hover {
@@ -54,29 +55,49 @@
       flex-wrap: wrap;
       gap: 20px;
       padding: 20px;
+      justify-content: center;
     }
 
     .product {
-      border: 1px solid #ddd;
-      padding: 10px;
+      border: 1px solid #ced4da;
+      background-color: #fff;
+      padding: 20px;
       text-align: center;
       width: 30%; /* Adjust as needed */
       margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
     }
 
     .product img {
-      width: 190px;
-      height: 190px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product h1 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .product p {
+      margin: 8px 0;
+      color: #6c757d;
     }
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       margin-top: 10px;
     }
 
     .buttons button {
-      padding: 10px;
+      padding: 10px 20px;
       border: none;
       cursor: pointer;
       border-radius: 5px;
@@ -84,18 +105,30 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .buttons button:hover {
-      background-color: #66c2ff;
+    .buttons button:first-child {
+      background-color: #28a745;
       color: white;
+    }
+
+    .buttons button:last-child {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .buttons button:hover {
+      background-color: #6c757d;
     }
 
     .cart-notification {
       position: fixed;
       top: 10px;
       right: 10px;
-      background-color: #66c2ff;
+      background-color: #28a745;
+      color: white;
       padding: 10px;
       display: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media screen and (max-width: 768px) {
@@ -117,6 +150,11 @@
       animation: slideText 10s linear infinite; /* Adjust animation duration as needed */
       white-space: nowrap;
       overflow: hidden;
+      font-size: 16px;
+      background-color: #343a40;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
     }
 
     @keyframes slideText {
@@ -134,8 +172,8 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="lucky.html">luckydraw</a></li>
-      <li><a href="smm.html">social media services</a></li>
+      <li><a href="lucky.html">Lucky Draw</a></li>
+      <li><a href="smm.html">Social Media Services</a></li>
     </ul>
   </nav>
 
@@ -143,26 +181,24 @@
     <!-- Product 1 -->
     <div class="product">
       <img src="img/Handy-Mini-Body-Massager-SDL408276751-1-42def.jpg" alt="Product 1">
-      <h1>Electric mini massager</h1>
-      <p>price: 550pkr</p>
+      <h1>Electric Mini Massager</h1>
+      <p>Price: 550pkr</p>
       <div class="buttons">
-        <button onclick="addToCart('Product 1')">Add to Cart</button>
-        <button onclick="redirectToWhatsApp('Product 1')">Buy Now</button>
+        <button onclick="addToCart('Electric Mini Massager')">Add to Cart</button>
+        <button onclick="redirectToWhatsApp('Electric Mini Massager')">Buy Now</button>
       </div>
     </div>
-
-    <!-- Product 2 -->
-    <div class="product">
-      <img src="img/p2.jpg" alt="Product 2">
-      <h1>electric mini massager</h1>
-      <p>Price: 599pkr</p>
-      <div class="buttons">
-        <button onclick="addToCart('Product 2')">Add to Cart</button>
-        <button onclick="redirectToWhatsApp('Product 2')">Buy Now</button>
+       <!-- Product 2 -->
+       <div class="product">
+        <img src="img/p2.jpg" alt="Product 2">
+        <h1>electric mini massager</h1>
+        <p>Price: 599pkr</p>
+        <div class="buttons">
+          <button onclick="addToCart('Product 2')">Add to Cart</button>
+          <button onclick="redirectToWhatsApp('Product 2')">Buy Now</button>
+        </div>
       </div>
-    </div>
-
-    <!-- Product 3 -->
+       <!-- Product 3 -->
     <div class="product">
       <img src="img/p3.webp" alt="Product 3">
       <h1>ring light</h1>
@@ -172,9 +208,8 @@
         <button onclick="redirectToWhatsApp('Product 3')">Buy Now</button>
       </div>
     </div>
-
-    <!-- Product 4 -->
-    <div class="product">
+     <!-- Product 4 -->
+     <div class="product">
       <img src="img/WhatsApp Image 2024-01-21 at 11.37.19 PM (1).jpeg" alt="Product 4">
       <h1>branded watch(black)</h1>
       <p>Price: 1500pkr</p>
@@ -210,14 +245,53 @@
     <h1>earbuds(white)</h1>
     <p>Price: 2399pkr</p>
     <div class="buttons">
-      <button onclick="addToCart('Product 6')">Add to Cart</button>
-      <button onclick="redirectToWhatsApp('Product 6')">Buy Now</button>
+      <button onclick="addToCart('Product 7')">Add to Cart</button>
+      <button onclick="redirectToWhatsApp('Product 7')">Buy Now</button>
     </div>
   </div>
+  <div class="product">
+    <img src="img/hood (1).jpeg" alt="Product 5">
+    <h1>hoodie(all clr available)</h1>
+    <p>Price: 1500pkr</p>
+    <div class="buttons">
+      <button onclick="addToCart('Product 8')">Add to Cart</button>
+      <button onclick="redirectToWhatsApp('Product 8')">Buy Now</button>
+    </div>
+  </div>
+  <div class="product">
+    <img src="img/hood (2).jpeg" alt="Product 5">
+    <h1>tracksuit</h1>
+    <p>Price: 2199pkr</p>
+    <div class="buttons">
+      <button onclick="addToCart('Product 9')">Add to Cart</button>
+      <button onclick="redirectToWhatsApp('Product 9')">Buy Now</button>
+    </div>
+  </div>
+  <div class="product">
+    <img src="img/chain.jpeg" alt="Product 5">
+    <h1>gold chain</h1>
+    <p>Price: 899pkr</p>
+    <div class="buttons">
+      <button onclick="addToCart('Product 10')">Add to Cart</button>
+      <button onclick="redirectToWhatsApp('Product 10')">Buy Now</button>
+    </div>
+  </div>
+  <div class="product">
+    <img src="img/hair remo.jpeg" alt="Product 5">
+    <h1>hair removal spray</h1>
+    <p>Price: 1399pkr</p>
+    <div class="buttons">
+      <button onclick="addToCart('Product 11')">Add to Cart</button>
+      <button onclick="redirectToWhatsApp('Product 11')">Buy Now</button>
+    </div>
+  </div>
+    <!-- Repeat for other products -->
+  </div>
+
   <div class="cart-notification" id="cart-notification"></div>
 
   <div class="animated-text">
-    <p>get 40% off on every product</p>
+    <p>Get 40% off on every product</p>
   </div>
 
   <script>
